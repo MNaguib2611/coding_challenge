@@ -6,6 +6,7 @@
   "scripts": {
     "build": "tsc --project ./",
     "build:srv": "node ./build/index.js",
+    "start": "npm run build && npm run build:srv",
     "dev": "export DEBUG=* && nodemon src/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
