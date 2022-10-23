@@ -1,11 +1,12 @@
-import express, { Express, Application, Request, Response } from "express";
+import express, { Express } from "express";
 import * as http from "http";
 import cors from "cors";
 import helmet from "helmet";
-import { RouteConfig } from "./Common/common.route.config";
 import debug, { IDebugger } from "debug";
 import dotenv from "dotenv";
-dotenv.config({});
+dotenv.config();
+import { RouteConfig } from "./Common/common.route.config";
+import { BookRoutes } from "./books/book.route.config";
 
 var bodyParser = require("body-parser");
 const app: Express = express();
@@ -21,7 +22,7 @@ app.use(helmet());
 app.use(express.json());
 app.use(cors());
 
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 8080;
 const debugLog: IDebugger = debug("app");
 
 if (process.env.DEBUG) {
@@ -31,10 +32,8 @@ if (process.env.DEBUG) {
   });
 } else {
 }
-app.route(`/`).get((req, res) => {
-  console.log(req);
-  res.json({ message: "hello" });
-});
+
+routes.push(new BookRoutes(app));
 
 const server: http.Server = http.createServer(app);
 server.listen(PORT, () => {
