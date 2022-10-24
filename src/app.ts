@@ -28,10 +28,4 @@ if (process.env.DEBUG) {
 
 routes.push(new BookRoutes(app));
 
-app.listen(PORT, () => {
-  debugLog(`Server is running on ${PORT}`);
-
-  routes.forEach((route: RouteConfig) => {
-    debugLog(`Routes configured for ${route.getName()}`);
-  });
-});
+export default app;

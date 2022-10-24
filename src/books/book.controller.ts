@@ -19,6 +19,12 @@ class BookController {
   async show(req: any, res: Response, next: NextFunction) {
     try {
       const book = await BookService.findBookById(req.params._id);
+      if (!book) {
+        return res.status(404).json({
+          success: false,
+          message: "Book Doesn't exist",
+        });
+      }
       return res.status(200).json({
         success: true,
         data: book,
@@ -36,7 +42,7 @@ class BookController {
         author,
         year,
       });
-      return res.status(200).json({
+      return res.status(201).json({
         success: true,
         data: newBook,
         message: "Book Created Successfully",
@@ -67,8 +73,9 @@ class BookController {
   async delete(req: any, res: Response, next: NextFunction) {
     try {
       const book = await BookService.findBookById(req.params._id);
+      // book;
       if (!book) {
-        return res.status(400).json({
+        return res.status(404).json({
           success: false,
           message: "Book Doesn't exist",
         });

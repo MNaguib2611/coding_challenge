@@ -18,6 +18,10 @@ class MongooseService {
     return mongoose;
   }
 
+  closeConnection() {
+    return mongoose.connection.close();
+  }
+
   connectWithRetry() {
     log("process.env.MONGODB_URI", process.env.MONGODB_URI);
     const MONGODB_URI = process.env.MONGODB_URI || "";
