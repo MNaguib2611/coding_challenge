@@ -7,7 +7,7 @@
     "build": "tsc --project ./",
     "build:srv": "node ./build/index.js",
     "start": "npm run build && npm run build:srv",
-    "dev": "export DEBUG=* && nodemon src/index.ts",
+    "dev": "export DEBUG=* && ts-node-dev src/index.ts",
     "test": "jest"
   },
   "jest": {
@@ -47,6 +47,7 @@
     "supertest": "^6.3.0",
     "ts-jest": "^29.0.3",
     "ts-node": "^10.9.1",
+    "ts-node-dev": "^2.0.0",
     "typescript": "^4.8.4"
   }
 }

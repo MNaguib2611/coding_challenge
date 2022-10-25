@@ -31,7 +31,9 @@ will be found under the /books path
 
 1. use the end point `/order`
 2. use `file` as the key for the file
-3. the 2 output files will be generated in the `output_files` directory in the project root
+3. go to terminal and use `docker exec -it app bash`
+4. the 2 output files will be generated in the `output_files` directory
+5. the file content will also be returned as response for the `/order` endpoint
 
 ## Technologies used
 

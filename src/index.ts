@@ -1,5 +1,4 @@
 import express, { Express } from "express";
-import * as http from "http";
 import cors from "cors";
 import helmet from "helmet";
 import debug, { IDebugger } from "debug";

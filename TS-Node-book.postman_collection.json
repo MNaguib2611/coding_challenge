@@ -63,7 +63,7 @@
 							"variable": [
 								{
 									"key": "_id",
-									"value": "635560c79e3e1a923fea5f39"
+									"value": "6355612542abee953d003de8"
 								}
 							]
 						}
@@ -86,24 +86,13 @@
 						"method": "POST",
 						"header": [],
 						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "title",
-									"value": "Harry Poter",
-									"type": "text"
-								},
-								{
-									"key": "author",
-									"value": "Joanne Rowling",
-									"type": "text"
-								},
-								{
-									"key": "year",
-									"value": "1997",
-									"type": "text"
+							"mode": "raw",
+							"raw": "{\n    \"title\":\"Harry Poter 3\",\n    \"author\":\"Joanne Rowling\",\n    \"year\":1999\n}",
+							"options": {
+								"raw": {
+									"language": "json"
 								}
-							]
+							}
 						},
 						"url": {
 							"raw": "{{url2}}/books",
@@ -182,7 +171,7 @@
 							"variable": [
 								{
 									"key": "_id",
-									"value": "635562b94b13739f834f305e"
+									"value": "6355612542abee953d003de8"
 								}
 							]
 						}
@@ -208,7 +197,14 @@
 							]
 						},
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
 						"body": {
 							"mode": "formdata",
 							"formdata": [
@@ -226,47 +222,6 @@
 							],
 							"path": [
 								"orders"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "show",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{token}}",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "file",
-									"type": "file",
-									"src": "/Users/mohammednaguib/Desktop/ttt.csv"
-								}
-							]
-						},
-						"url": {
-							"raw": "{{url2}}/orders/a",
-							"host": [
-								"{{url2}}"
-							],
-							"path": [
-								"orders",
-								"a"
 							]
 						}
 					},

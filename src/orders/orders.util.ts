@@ -69,7 +69,10 @@ export class Utls {
       ""
     );
     try {
-      fs.writeFileSync(`./output_files/${fileName} `, content);
+      if (!fs.existsSync("output_files")) {
+        fs.mkdirSync("output_files");
+      }
+      fs.writeFileSync(`./output_files/${fileName}`, content);
       // file written successfully
     } catch (err) {
       console.error(err);
