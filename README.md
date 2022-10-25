@@ -19,9 +19,27 @@ to build the `docker-compose` container and run the project
 ./scripts/test.sh
 ```
 
-#### Technologies used
+#### The crud apis
+
+```
+will be found under the /books path
+```
+
+# 2-The problem solving challenge
+
+#### using an api post request
+
+1. use the end point `/order`
+2. use `file` as the key for the file
+3. the 2 output files will be generated in the `output_files` directory in the project root
+
+## Technologies used
 
 1. ExpressJs
 2. TypeScript
 3. MongoDB
 4. Jest
+
+## PS
+
+there is a postman collection file included in the project root directory containing all the endpoints

@@ -7,6 +7,7 @@ import dotenv from "dotenv";
 dotenv.config();
 import { RouteConfig } from "./Common/common.route.config";
 import { BookRoutes } from "./books/book.route.config";
+import { OrderRoutes } from "./orders/order.route.config";
 
 const app: Express = express();
 const routes: Array<RouteConfig> = [];
@@ -27,6 +28,7 @@ if (process.env.DEBUG) {
 }
 
 routes.push(new BookRoutes(app));
+routes.push(new OrderRoutes(app));
 
 app.listen(PORT, () => {
   debugLog(`Server is running on ${PORT}`);
