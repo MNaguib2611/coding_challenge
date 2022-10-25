@@ -31,9 +31,8 @@ will be found under the /books path
 
 1. use the end point `/order`
 2. use `file` as the key for the file
-3. go to terminal and use `docker exec -it app bash`
-4. the 2 output files will be generated in the `output_files` directory
-5. the file content will also be returned as response for the `/order` endpoint
+3. the 2 output files will be generated in the `output_files` directory
+4. the file content will also be returned as response for the `/orders` endpoint
 
 ## Technologies used
 
@@ -44,4 +43,8 @@ will be found under the /books path
 
 ## PS
 
-there is a postman collection file included in the project root directory containing all the endpoints
+there is a directory called helper_files containing:
+
+1. postman collection file containing all the endpoints
+2. input_example.csv
+3. order_log00.csv
